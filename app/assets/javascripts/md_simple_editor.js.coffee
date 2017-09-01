@@ -64,6 +64,13 @@ md_simple_editor = () ->
               \n\t\t<li><a target='_blank' href='Your link here'>Text to display</a></li>
               \n\t</ul>
               \n</div>"
+            else if option == 'md_notice_block'
+              "<div class='notice-block'>
+              \n\t<i class='fa fa-exclamation-circle fa-5x notice-icon'></i>
+              \n\t<div class='notice-text-wrapper'>
+              \n\t\t<p class='notice-text'>Your notice texts here. To add another paragraph, simply copy and paster this line with 'p' and '/p' tag.</p>
+              \n\t</div>
+              \n</div>"
 
       textarea = $('#md-editor #md-text textarea')
       insertAtCaret(textarea.attr('id'), text)
