@@ -46,8 +46,14 @@ module MdSimpleEditor
               button_tag(:type => 'button', :class => "btn btn-default md_square") do
                 fa_icon "square"
               end +
+              button_tag(:type => 'button', :class => "btn btn-default md_terminal") do
+                fa_icon "terminal"
+              end +
               button_tag(:type => 'button', :class => "btn btn-default md_minus") do
                 fa_icon "minus"
+              end +
+              button_tag(:type => 'button', :class => "btn btn-default md_paragraph_block") do
+                fa_icon "paragraph"
               end
             end +
             content_tag(:div, :class => "btn-group") do
