@@ -55,8 +55,11 @@ module MdSimpleEditor
               button_tag(:type => 'button', :class => "btn btn-default md_minus") do
                 fa_icon "minus"
               end +
-              button_tag(:type => 'button', :class => "btn btn-default md_paragraph_block") do
-                fa_icon "paragraph"
+              button_tag(:type => 'button', :class => "btn btn-default md_external_link_block") do
+                fa_icon("external-link-square")
+              end +
+              button_tag(:type => 'button', :class => "btn btn-default md_notice_block") do
+                fa_icon("exclamation-circle")
               end
             end +
             content_tag(:div, :class => "btn-group") do

@@ -57,8 +57,13 @@ md_simple_editor = () ->
               "\n[This is a link](http://google.com)\n"
             else if option == 'md_camera-retro'
               "\n![Alt](https://www.google.com.co/images/srpr/logo11w.png)\n"
-            else if option == 'md_paragraph_block'
-              "<p class='paragraph-block'>Your paragraph block here </p>"
+            else if option == 'md_external_link_block'
+              "<div class='external-link-block'>
+              \n\t<h5>延伸閱讀</h5>
+              \n\t<ul>
+              \n\t\t<li><a target='_blank' href='Your link here'>Text to display</a></li>
+              \n\t</ul>
+              \n</div>"
 
       textarea = $('#md-editor #md-text textarea')
       insertAtCaret(textarea.attr('id'), text)
