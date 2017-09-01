@@ -27,6 +27,8 @@ md_simple_editor = () ->
                "_Your italic text here_"
             else if option == 'md_bold'
                "__Your bold text here__"
+            else if option == 'md_text_specific_color'
+              "<span class='text-special-color'>Your text with special color here</span>"
             else if option == 'md_list-ul'
                "\n\n* Item 1\n* Item 2\n* Item 3 \n\n<br>"
             else if option == 'md_list-ol'

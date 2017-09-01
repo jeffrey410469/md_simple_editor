@@ -28,6 +28,9 @@ module MdSimpleEditor
               button_tag(:type => 'button', :class => "btn btn-default md_bold") do
                 fa_icon "bold"
               end +
+              button_tag(:type => 'button', :class => "btn btn-default md_text_specific_color") do
+                fa_icon "font"
+              end +
               button_tag(:type => 'button', :class => "btn btn-default md_list-ul") do
                 fa_icon "list-ul"
               end +
