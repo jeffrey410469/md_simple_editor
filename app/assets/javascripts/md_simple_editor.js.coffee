@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 md_simple_editor = () ->
-  $('.btn-toolbar .btn-group button').click ->
+  $(document).on 'click', '.btn-toolbar .btn-group button', ->
     att_class = this.classList
     rgex = /md_/
 
