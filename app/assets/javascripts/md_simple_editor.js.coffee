@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 md_simple_editor = () ->
-  $('.btn-toolbar .btn-group button').click ->
+  $(document).on 'click', '.btn-toolbar .btn-group button', ->
     att_class = this.classList
     rgex = /md_/
 
@@ -123,6 +123,7 @@ insertAtCaret = (areaId, text) ->
 initializeEditor = ->
   md_simple_editor()
   $(document).off 'turbolinks:load page:load ready', initializeEditor
+  $(document).on 'click', '.previw_md', ->
   $('.preview_md').click ->
     preview()
 
