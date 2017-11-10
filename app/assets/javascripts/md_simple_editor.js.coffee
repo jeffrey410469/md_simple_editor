@@ -72,7 +72,7 @@ md_simple_editor = () ->
               \n\t</div>
               \n</div>"
 
-      textarea = $('#md-editor #md-text textarea')
+      textarea = $(this).parents('.md-editor').find('#md-text textarea')
       insertAtCaret(textarea.attr('id'), text)
 
 preview = ->

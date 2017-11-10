@@ -2,7 +2,7 @@ module MdSimpleEditor
   module Rails
     module MdHelper
       def md_simple_editor
-        content_tag(:div, :id => "md-editor") do
+        content_tag(:div, :id => "md-editor", :class => "md-editor") do
           content_tag(:div, :class => "btn-toolbar", role: "toolbar") do
             content_tag(:div, :class => "btn-group") do
               button_tag(:type => 'button', :class => "btn btn-default md_h1") do
