@@ -72,24 +72,26 @@ md_simple_editor = () ->
               \n\t</div>
               \n</div>"
 
-      textarea = $('#md-editor #md-text textarea')
+      textarea = $(this).parents('.md-editor').find('#md-text textarea')
       insertAtCaret(textarea.attr('id'), text)
 
-preview = ->
-  if $('#md-text').prop('hidden')
-    $('.preview_md').text('Preview')
-    $('#md-text').removeAttr('hidden')
-    $('.preview-panel').attr('hidden', 'true')
+preview = (elem) ->
+  $parent = $(elem).parents('.md-editor')
+  $md_text = $parent.find('#md-text')
+  if $md_text.prop('hidden')
+    $(elem).text('Preview')
+    $md_text.removeAttr('hidden')
+    $parent.find('.preview-panel').attr('hidden', 'true')
     false
   else
     $.post(
       '/md_simple_editor/preview',
-      {md: $('#md-text textarea').val()},
+      {md: $parent.find('#md-text textarea').val()},
       (data) ->
-        $('.preview_md').text('Editor')
-        $('#md-text').attr('hidden', 'true')
-        $('.preview-panel').removeAttr('hidden')
-        $('#md-preview').html(data)
+        $(elem).text('Editor')
+        $md_text.attr('hidden', 'true')
+        $parent.find('.preview-panel').removeAttr('hidden')
+        $parent.find('#md-preview').html(data)
     )
 
 insertAtCaret = (areaId, text) ->
@@ -124,7 +126,7 @@ initializeEditor = ->
   md_simple_editor()
   $(document).off 'turbolinks:load page:load ready', initializeEditor
   $(document).on 'click', '.previw_md', ->
-  $('.preview_md').click ->
-    preview()
+  $('.preview_md').click (e) ->
+    preview(e.target)
 
 $(document).on 'turbolinks:load page:load ready', initializeEditor
